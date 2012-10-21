@@ -1,0 +1,2 @@
+module AppdotnetSocialsHelper
+end

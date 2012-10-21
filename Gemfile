@@ -26,6 +26,7 @@ gem "twitter-bootstrap-rails"
 gem 'omniauth-twitter'
 gem 'omniauth-appnet'
 gem 'omniauth-facebook'
+gem 'omniauth-appdotnet'
 
 
 group :development do

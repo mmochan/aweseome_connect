@@ -1,4 +1,10 @@
 AwesomeConnect::Application.routes.draw do
+  resources :appdotnet_socials
+
+  resources :facebook_socials
+
+  resources :twitter_socials
+
   resources :landings
 
   devise_for :users

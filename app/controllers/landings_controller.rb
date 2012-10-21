@@ -1,6 +1,8 @@
 class LandingsController < ApplicationController
   # GET /landings
   # GET /landings.json
+  
+  before_filter :authenticate_user!
   def index
     @landings = Landing.all
 

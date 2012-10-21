@@ -1,25 +1,31 @@
-<%- model_class = Landing -%>
+<%- model_class = AppdotnetSocial -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => "Let's do some OmniAuth" %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:user) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:password) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @landings.each do |landing| %>
+    <% @appdotnet_socials.each do |appdotnet_social| %>
       <tr>
-        <td><%= link_to landing.id, landing_path(landing) %></td>
-        <td><%=l landing.created_at %></td>
+        <td><%= link_to appdotnet_social.id, appdotnet_social_path(appdotnet_social) %></td>
+        <td><%= appdotnet_social.user %></td>
+        <td><%= appdotnet_social.email %></td>
+        <td><%= appdotnet_social.password %></td>
+        <td><%=l appdotnet_social.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_landing_path(landing), :class => 'btn btn-mini' %>
+                      edit_appdotnet_social_path(appdotnet_social), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      landing_path(landing),
+                      appdotnet_social_path(appdotnet_social),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
@@ -30,5 +36,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_landing_path,
+            new_appdotnet_social_path,
             :class => 'btn btn-primary' %>
