@@ -29,7 +29,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-appdotnet'
 
-gem 'quiet_assets'
+gem "koala" 
 
 
 group :development do

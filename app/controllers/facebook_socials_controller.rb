@@ -2,9 +2,13 @@ class FacebookSocialsController < ApplicationController
   # GET /facebook_socials
   # GET /facebook_socials.json
   before_filter :authenticate_user!
+  
   def index
     @facebook_socials = FacebookSocial.all
+    
+    @facebook = current_user.identities.where(:provider => "facebook").first
 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @facebook_socials }

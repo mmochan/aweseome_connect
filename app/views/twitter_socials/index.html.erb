@@ -16,7 +16,7 @@
               <li><%= identity.provider %></li>
             </ul>
           <% end %>
-                          <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>  
+           <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>  
         <% else %>
                 <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>   
         <% end %>
@@ -28,23 +28,11 @@
       <% end %>
     </div>
   </div>
-  
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:followers_count) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @twitter_socials.each do |twitter_social| %>
-      <tr>
-        <td><%= link_to twitter_social.id, twitter_social_path(twitter_social) %></td>
-        <td><%= twitter_social.followers_count %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <blockquote   <a class="twitter-timeline" href="https://twitter.com/mmochan" data-widget-id="259951507896664064">Tweets by @mmochan</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></blockquote>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_twitter_social_path,
-            :class => 'btn btn-primary' %>
+
+  <blockquote class="twitter-tweet tw-align-left" width="350"><p>Search API will now always return "real" Twitter user IDs. The with_twitter_user_id parameter is no longer necessary. An era has ended. ^TS</p>&mdash; Twitter API (@twitterapi) <a href="https://twitter.com/twitterapi/status/133640144317198338" data-datetime="2011-11-07T20:21:07+00:00">November 7, 2011</a></blockquote>
+  <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
