@@ -28,6 +28,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-appdotnet'
 
+gem 'quiet_assets'
+
 
 group :development do
   gem 'irbtools'
