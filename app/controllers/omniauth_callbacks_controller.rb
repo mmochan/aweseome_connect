@@ -3,7 +3,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def all
     auth  = request.env["omniauth.auth"]
     @identity = Identity.find_with_omniauth(auth)
-binding.pry
+
     if @identity.nil?
       # If no identity was found, create a brand new one here
       @identity = Identity.create_with_omniauth(auth)
