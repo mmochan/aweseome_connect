@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem "twitter-bootstrap-rails"
 gem 'omniauth-twitter'
-gem 'omniauth-appnet'
+#gem 'omniauth-appnet'
 gem 'omniauth-facebook'
 gem 'omniauth-appdotnet'
 

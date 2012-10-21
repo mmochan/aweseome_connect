@@ -1,15 +1,18 @@
 AwesomeConnect::Application.routes.draw do
+  
+  resources :identities
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+                      controllers: {omniauth_callbacks: "omniauth_callbacks" }
+  
   resources :appdotnet_socials
-
   resources :facebook_socials
-
   resources :twitter_socials
-
   resources :landings
-
   devise_for :users
 
   root :to => 'landings#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

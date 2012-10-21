@@ -120,9 +120,6 @@ GEM
     omniauth-appdotnet (0.0.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.0)
-    omniauth-appnet (0.1.0)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
     omniauth-facebook (1.4.1)
       omniauth-oauth2 (~> 1.1.0)
     omniauth-oauth (1.0.1)
@@ -211,7 +208,6 @@ DEPENDENCIES
   irbtools
   jquery-rails
   omniauth-appdotnet
-  omniauth-appnet
   omniauth-facebook
   omniauth-twitter
   pry
