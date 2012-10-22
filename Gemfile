@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'thin'
+gem 'quiet_assets'
 gem 'jquery-rails'
 gem 'devise'
 gem "twitter-bootstrap-rails"
@@ -29,7 +30,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-appdotnet'
 
-gem "koala" 
+gem "koala"     #facebook
+gem "twitter"   #twitter
+
 
 
 group :development do

@@ -12,10 +12,12 @@
         <p><%=current_user.email %> is linked to the following accounts</p>
         <% current_user.identities.each do |identity| %>
           <ul><br />
-            <li><%= identity.provider %></li>
+           <blockquote><strong>provider:</strong>  <%= identity.provider %></li><br />
+           <strong>user:</strong>  <%= identity.name %></li>
+          </blockquote>
           </ul>
         <% end %>
-                        <%= link_to "Sign in with App.net", user_omniauth_authorize_path(:appdotnet) %>  
+              <%= link_to "Sign in with App.net", user_omniauth_authorize_path(:appdotnet) %>  
       <% else %>
               <%= link_to "Sign in with App.net", user_omniauth_authorize_path(:appdotnet) %>   
       <% end %>
@@ -28,39 +30,3 @@
   </div>
 </div>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:user) %></th>
-      <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:password) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @appdotnet_socials.each do |appdotnet_social| %>
-      <tr>
-        <td><%= link_to appdotnet_social.id, appdotnet_social_path(appdotnet_social) %></td>
-        <td><%= appdotnet_social.user %></td>
-        <td><%= appdotnet_social.email %></td>
-        <td><%= appdotnet_social.password %></td>
-        <td><%=l appdotnet_social.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_appdotnet_social_path(appdotnet_social), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      appdotnet_social_path(appdotnet_social),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_appdotnet_social_path,
-            :class => 'btn btn-primary' %>

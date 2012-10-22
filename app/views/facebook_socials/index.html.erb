@@ -12,7 +12,9 @@
         <p><%=current_user.email %> is linked to the following accounts</p>
         <% current_user.identities.each do |identity| %>
           <ul><br />
-            <li><%= identity.provider %></li>
+           <blockquote><strong>provider:</strong>  <%= identity.provider %></li><br />
+           <strong>user:</strong>  <%= identity.name %></li>
+          </blockquote>
           </ul>
         <% end %>
                         <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>  
@@ -28,25 +30,5 @@
   </div>
 </div>
 
-
-
 <%= @facebook.inspect %>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:user) %></th>
-      <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:password) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
 
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_facebook_social_path,
-            :class => 'btn btn-primary' %>

@@ -13,7 +13,9 @@
           <p><%=current_user.email %> is linked to the following accounts</p>
           <% current_user.identities.each do |identity| %>
             <ul><br />
-              <li><%= identity.provider %></li>
+             <blockquote><strong>provider:</strong>  <%= identity.provider %></li><br />
+             <strong>user:</strong>  <%= identity.name %></li>
+            </blockquote>
             </ul>
           <% end %>
            <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>  
@@ -28,8 +30,14 @@
       <% end %>
     </div>
   </div>
-<a class="twitter-timeline" href="https://twitter.com/telstra" data-widget-id="259951507896664064">Tweets by @mmochan</a>
+  
+  <a class="twitter-timeline" href="https://twitter.com/darrenrogan" data-widget-id="260324901301391360">Tweets by @darrenrogan</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  
+  <a class="twitter-timeline" href="https://twitter.com/mmochan" data-widget-id="259951507896664064">Tweets by @mmochan</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></blockquote>
 
 
+  <a class="twitter-timeline" href="https://twitter.com/aramiske1" data-widget-id="260308822697066496">Tweets by @aramiske1</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
