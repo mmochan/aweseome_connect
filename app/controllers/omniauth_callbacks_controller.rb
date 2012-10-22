@@ -15,12 +15,14 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         # account. But we found the identity and the user associated with it 
         # is the current user. So the identity is already associated with 
         # this user. So let's display an error message.
+        @identity.update_attributes(oauth_token: auth['credentials']['token'], oauth_expires_at: auth['credentials']['expires_at'])
         redirect_to root_url, notice: "Already linked that account!"
       else
         # The identity is not associated with the current_user so lets 
         # associate the identity
         @identity.user = current_user
         @identity.save()
+        @identity.update_attributes(oauth_token: auth['credentials']['token'], oauth_expires_at: auth['credentials']['expires_at'])        
         redirect_to root_url, notice: "Successfully linked that account!"
       end
     else
@@ -28,6 +30,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         # The identity we found had a user associated with it so let's 
         # just log them in here
         current_user = @identity.user
+        @identity.update_attributes(oauth_token: auth['credentials']['token'], oauth_expires_at: auth['credentials']['expires_at'])
         redirect_to root_url, notice: "Signed in!"
       else
         # No user associated with the identity so we need to create a new one
