@@ -4,6 +4,8 @@ class TwitterSocialsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @twitter_socials = TwitterSocial.all
+    
+
 
     respond_to do |format|
       format.html # index.html.erb

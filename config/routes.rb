@@ -11,7 +11,7 @@ AwesomeConnect::Application.routes.draw do
   resources :landings
   devise_for :users
 
-  root :to => 'landings#index'
+  root :to => 'twitter_socials#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
