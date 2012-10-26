@@ -32,6 +32,10 @@ gem 'omniauth-appdotnet'
 
 gem "koala"     #facebook
 gem "twitter"   #twitter
+gem 'json'
+gem 'rabl'
+
+gem 'rails-footnotes'
 
 
 

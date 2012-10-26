@@ -145,6 +145,9 @@ GEM
       slop (~> 3.3.1)
     quiet_assets (1.0.0)
       rails (~> 3.1)
+    rabl (0.7.3)
+      activesupport (>= 2.3.14)
+      multi_json (~> 1.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -160,6 +163,8 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
+    rails-footnotes (3.7.8)
+      rails (>= 3.0.0)
     railties (3.2.8)
       actionpack (= 3.2.8)
       activesupport (= 3.2.8)
@@ -223,13 +228,16 @@ DEPENDENCIES
   devise
   irbtools
   jquery-rails
+  json
   koala
   omniauth-appdotnet
   omniauth-facebook
   omniauth-twitter
   pry
   quiet_assets
+  rabl
   rails (= 3.2.8)
+  rails-footnotes
   sass-rails (~> 3.2.3)
   sqlite3
   thin

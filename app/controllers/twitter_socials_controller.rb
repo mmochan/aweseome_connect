@@ -4,6 +4,11 @@ class TwitterSocialsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @twitter_socials = TwitterSocial.all
+#    auth.extra.access_token.params[:oauth_token_secret
+
+#binding.pry
+ #   @mike = Twitter::Client.new( :oauth_token => "15402922-KHkNtEs51nfuEWdM271xJi55yVOSt0oyosTYb99Lw", :oauth_token_secret =>"t00lczlanuvrvhBcC0A8CI1rUHWZRuDZcJ9E88JlNU")
+  #  @mike.update("I'm tweeting from lndkfnkdjfnbkbnkdjfnkmy app so please ignore")
     
 
 

@@ -1,14 +1,23 @@
 class AppdotnetSocialsController < ApplicationController
   # GET /appdotnet_socials
   # GET /appdotnet_socials.json
+  
+  require 'open-uri'
   before_filter :authenticate_user!
   
   def index
     @appdotnet_socials = AppdotnetSocial.all
 
+    id = current_user.identities.find_by_provider('appdotnet')
+    @globalfeeds = JSON.parse(open("https://alpha-api.app.net/stream/0/posts/stream/global").read)    
+    @me = JSON.parse(open("https://alpha-api.app.net/stream/0/users/#{id.uid.to_s}?access_token=#{id.oauth_token}").read) 
+    @users = JSON.parse(open("https://alpha-api.app.net/stream/0/users?access_token=#{id.oauth_token}").read)    
+   # binding.pry
+ 
+# @users = JSON.parse(open("https://alpha-api.app.net/stream/0/users?access_token=#{id.oauth_token}").read)    
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @appdotnet_socials }
+      format.json { render json: @globalfeeds }
     end
   end
 
