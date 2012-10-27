@@ -64,6 +64,9 @@ GEM
     hashie (1.2.0)
     hike (1.2.1)
     hirb (0.6.2)
+    httparty (0.9.0)
+      multi_json (~> 1.0)
+      multi_xml
     httpauth (0.2.0)
     i18n (0.6.1)
     interactive_editor (0.0.10)
@@ -111,6 +114,7 @@ GEM
     methodfinder (1.2.5)
     mime-types (1.19)
     multi_json (1.3.6)
+    multi_xml (0.5.1)
     multipart-post (1.1.5)
     oauth (0.4.6)
     oauth2 (0.8.0)
@@ -226,6 +230,8 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
+  hashie
+  httparty
   irbtools
   jquery-rails
   json

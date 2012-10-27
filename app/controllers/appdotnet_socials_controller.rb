@@ -7,17 +7,24 @@ class AppdotnetSocialsController < ApplicationController
   
   def index
     @appdotnet_socials = AppdotnetSocial.all
+    if @appdotnet_socials.nil?
+      binding.pry
+      @user = @appdotnet_socials.first.user
+      @token = @appdotnet_socials.first.token
+    end
 
-    id = current_user.identities.find_by_provider('appdotnet')
-    @globalfeeds = JSON.parse(open("https://alpha-api.app.net/stream/0/posts/stream/global").read)    
-    @me = JSON.parse(open("https://alpha-api.app.net/stream/0/users/#{id.uid.to_s}?access_token=#{id.oauth_token}").read) 
-    @users = JSON.parse(open("https://alpha-api.app.net/stream/0/users?access_token=#{id.oauth_token}").read)    
-   # binding.pry
- 
-# @users = JSON.parse(open("https://alpha-api.app.net/stream/0/users?access_token=#{id.oauth_token}").read)    
+      # id = current_user.identities.find_by_provider('appdotnet')
+      # @globalfeeds = JSON.parse(open("https://alpha-api.app.net/stream/0/posts/stream/global").read).first    
+      # @post = JSON.parse(open("https://alpha-api.app.net/stream/0/posts/#{id.uid.to_s}?access_token=#{id.oauth_token}").read)    
+      # @me = JSON.parse(open("https://alpha-api.app.net/stream/0/users/#{id.uid.to_s}?access_token=#{id.oauth_token}").read)   
+      # @following  = JSON.parse(open("https://alpha-api.app.net/stream/0/users/#{id.uid.to_s}/following?access_token=#{id.oauth_token}").read)   
+      # @token  = JSON.parse(open("https://alpha-api.app.net/stream/0/token?access_token=#{id.oauth_token}").read)       
+    
+#    binding.pry   
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @globalfeeds }
+      format.json { render json: [@appdotnet_socials, @user, @token]}
     end
   end
 

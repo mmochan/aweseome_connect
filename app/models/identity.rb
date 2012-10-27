@@ -1,5 +1,6 @@
 class Identity < ActiveRecord::Base
   belongs_to :user
+  has_many :appdotnet_social
   
   attr_accessible :uid, :provider, :name, :oauth_token, :oauth_expires_at
   

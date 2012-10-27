@@ -30,10 +30,13 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-appdotnet'
 
+gem 'hashie'
+
 gem "koala"     #facebook
 gem "twitter"   #twitter
 gem 'json'
 gem 'rabl'
+gem 'httparty'
 
 gem 'rails-footnotes'
 

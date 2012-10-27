@@ -1,4 +1,3 @@
-object @globalfeed
+object @appdotnet_socials
 
-attributes :id
-
+attributes :id, :username

@@ -32,3 +32,36 @@
 
 <div id="globalfeeds" data-globalfeeds="<%= render(template: "appdotnet_socials/index.json.rabl")%>">
 
+
+<%- model_class = Landing -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => "Your details" %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:uid) %></th>
+      <th><%= model_class.human_attribute_name(:username) %></th>
+      <th><%= model_class.human_attribute_name(:provider) %></th>      
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @appdotnet_socials.each do |social| %>
+      <tr>
+        <td><%= link_to social.uid, landing_path(social) %></td>
+        <td><%= social.username %></td>
+        <td><%= social.identity.provider %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_appdotnet_social_path(social), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      appdotnet_social_path(social),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

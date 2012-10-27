@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(:version => 20121021214029) do
 
   create_table "appdotnet_socials", :force => true do |t|
-    t.string   "user"
-    t.string   "email"
-    t.string   "password"
+    t.string   "uid"
+    t.string   "username"
+    t.integer  "identity_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
