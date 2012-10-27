@@ -16,3 +16,4 @@
 
 # Ignore all my secret keys
 /ignore
+/api-resources
